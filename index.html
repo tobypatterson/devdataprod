@@ -51,9 +51,6 @@
     background-color: #00bd1c;
     background: -webkit-radial-gradient(30% 40%, #9dfe43, #00bd1c);
   }
-  body article p, body article li {
-    font-size: 30px;
-  }
   body {
     background-color: black;
   }
@@ -75,7 +72,7 @@
   }
 </style>
 
-<h2>The Applicataion</h2>
+<h2>Why Provide a Cost Estimator</h2>
 
 <p>We can estimate electrical costs by examining historical usage data. Provided a month and expected utility costs,
 we can provide people estimates on what they can expect for utility costs.</p>
@@ -91,31 +88,21 @@ we can provide people estimates on what they can expect for utility costs.</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="page2" style="background:;">
+<slide class="" id="page3" style="background:;">
   <hgroup>
     <h2>How It Works</h2>
   </hgroup>
   <article data-timings="">
-    <ul>
+    <div style="float:right; width:40%">
+
+<ul>
 <li>Preprocess historical data optimized for reporting</li>
 <li>Create an interface using the Slidify software package (R language)</li>
 <li>Deploy the Slidify application to the server</li>
-<li>Users can enter their Utility rates, and select a month.</li>
-<li>Hosted application will display a graph of their electricity usage, and cost estimates based on the values they provided.</li>
+<li>Users can enter their Utility rates, and select a month</li>
+<li>We display a graph of their electricity usage and estimated costs</li>
 </ul>
 
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="page3" style="background:;">
-  <hgroup>
-    <h2>Electrical Usage Over Time</h2>
-  </hgroup>
-  <article data-timings="">
-    <div style="float:right; width:40%">
-  <p>Plot of usage shows trends over time.
-  <p>A good feature to implement would be to highlight the months selected, and to expand the number of categories for which costs are estimated.</p>
 </div>
 
 <p><img src="assets/fig/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
@@ -126,7 +113,7 @@ we can provide people estimates on what they can expect for utility costs.</p>
 
 <slide class="" id="page4" style="background:;">
   <hgroup>
-    <h2>The Application Prototype</h2>
+    <h2>The Working Prototype</h2>
   </hgroup>
   <article data-timings="">
     <iframe src="https://tobypatterson.shinyapps.io/DataProduct/ " ></iframe>
@@ -137,7 +124,7 @@ we can provide people estimates on what they can expect for utility costs.</p>
 
 <slide class="" id="page5" style="background:;">
   <hgroup>
-    <h2>Testing the Application</h2>
+    <h2>What Did You Learn?</h2>
   </hgroup>
   <article data-timings="">
     
@@ -187,20 +174,14 @@ we can provide people estimates on what they can expect for utility costs.</p>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='Electrical Usage Over Time'>
+        data-slide=3 title='The Working Prototype'>
          3
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='The Application Prototype'>
+        data-slide=4 title='What Did You Learn?'>
          4
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=5 title='Testing the Application'>
-         5
       </a>
     </li>
   </ul>

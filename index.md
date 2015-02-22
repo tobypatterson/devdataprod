@@ -18,9 +18,6 @@ knit        : slidify::knit2slides
     background-color: #00bd1c;
     background: -webkit-radial-gradient(30% 40%, #9dfe43, #00bd1c);
   }
-  body article p, body article li {
-    font-size: 30px;
-  }
   body {
     background-color: black;
   }
@@ -42,7 +39,7 @@ knit        : slidify::knit2slides
   }
 </style>
 
-## The Applicataion
+## Why Provide a Cost Estimator
 
 We can estimate electrical costs by examining historical usage data. Provided a month and expected utility costs,
 we can provide people estimates on what they can expect for utility costs.
@@ -52,25 +49,20 @@ we can provide people estimates on what they can expect for utility costs.
 
 The current prototype provides information about Heating and Lighting usage, but can be easily expanded to include additional categories.
 
---- #page2
+--- #page3
 
 ## How It Works
 
-* Preprocess historical data optimized for reporting
-* Create an interface using the Slidify software package (R language)
-* Deploy the Slidify application to the server
-* Users can enter their Utility rates, and select a month.
-* Hosted application will display a graph of their electricity usage, and cost estimates based on the values they provided.
-
---- #page3
-
-## Electrical Usage Over Time
-
-
-
 <div style="float:right; width:40%">
-  <p>Plot of usage shows trends over time.
-  <p>A good feature to implement would be to highlight the months selected, and to expand the number of categories for which costs are estimated.</p>
+
+<ul>
+<li>Preprocess historical data optimized for reporting</li>
+<li>Create an interface using the Slidify software package (R language)</li>
+<li>Deploy the Slidify application to the server</li>
+<li>Users can enter their Utility rates, and select a month</li>
+<li>We display a graph of their electricity usage and estimated costs</li>
+</ul>
+
 </div>
 
 ![plot of chunk unnamed-chunk-1](assets/fig/unnamed-chunk-1-1.png) 
@@ -78,13 +70,13 @@ The current prototype provides information about Heating and Lighting usage, but
 
 --- #page4
 
-## The Application Prototype
+## The Working Prototype
 
 <iframe src="https://tobypatterson.shinyapps.io/DataProduct/ " ></iframe>
 
 --- #page5 &radio
 
-## Testing the Application
+## What Did You Learn?
 
 Which month has the highest Lighting Costs ?
 
