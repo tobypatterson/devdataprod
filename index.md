@@ -45,9 +45,7 @@ knit        : slidify::knit2slides
 ## The Applicataion
 
 We can estimate electrical costs by examining historical usage data. Provided a month and expected utility costs,
-we can provide people estimates on what they can expect for utility costs for the coming year.
-
-Benefits: 
+we can provide people estimates on what they can expect for utility costs.
 
 * Provides users an graphical understanding of the electrical usage trends.
 * Assists in identifying high or unusual usage patterns where better usage or efficiency can save people money.
@@ -95,4 +93,10 @@ Which month has the highest Lighting Costs ?
 3. _July_
 4. October
 
-*** .hint From the Energy Cost Analysis tool, select each month and note the estimated costs returned.
+*** .hint 
+
+From the Energy Cost Analysis tool, select each month and note the estimated costs returned.
+
+*** .explanation 
+
+The month of July will have an estimated cost of $2061.62 . 
