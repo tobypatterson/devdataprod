@@ -68,13 +68,7 @@ we can provide people estimates on what they can expect for utility costs for th
   <p>A good feature to implement would be to highlight the months selected, and to expeand the number of categories for which costs are estimated.</p>
 </div>
 
-```{r message=FALSE,echo=FALSE}
-require(ggplot2)
-load('ElectricalUsage.Rda')
-ggplot(elecUsage, aes(date, usage)) + 
-      geom_point() + geom_smooth() +
-      scale_x_date() + xlab('') + ylab("Electrical Usage")
-```
+![plot of chunk unnamed-chunk-1](assets/fig/unnamed-chunk-1-1.png) 
 
 
 --- #page4
