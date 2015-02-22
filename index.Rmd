@@ -47,6 +47,13 @@ knit        : slidify::knit2slides
 We can estimate electrical costs by examining historical usage data. Provided a month and expected utility costs,
 we can provide people estimates on what they can expect for utility costs for the coming year.
 
+Benefits: 
+
+* Provides users an graphical understanding of the electrical usage trends.
+* Assists in identifying high or unusual usage patterns where better usage or efficiency can save people money.
+
+The current prototype provides information about Heating and Lighting usage, but can be easily expanded to include additional categories.
+
 --- #page2
 
 ## How It Works
@@ -65,7 +72,7 @@ we can provide people estimates on what they can expect for utility costs for th
 
 <div style="float:right; width:40%">
   <p>Plot of usage shows trends over time.
-  <p>A good feature to implement would be to highlight the months selected, and to expeand the number of categories for which costs are estimated.</p>
+  <p>A good feature to implement would be to highlight the months selected, and to expand the number of categories for which costs are estimated.</p>
 </div>
 
 ```{r message=FALSE,echo=FALSE}
