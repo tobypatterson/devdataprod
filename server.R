@@ -1,12 +1,13 @@
 library(shiny)
+library(ggplot2)
 library(plyr)
 
 rawData = read.csv(file="ElectricalOutputWithCat.csv", stringsAsFactors=FALSE)
 processedData = data.frame(
   date = as.Date(rawData$timestamp, format="%Y-%m-%d %H:%M:%S", tz="UTC"),
-  level = rawData$usage,
-  lighting = rawData$appcat_4,
-  heating = rawData$appcat_7
+  level = rawData$usage/1000,
+  lighting = rawData$appcat_4/1000,
+  heating = rawData$appcat_7/1000
 )
 dataByDays = group_by(processedData, date)
 elecUsage  = summarize(dataByDays, 
@@ -14,20 +15,30 @@ elecUsage  = summarize(dataByDays,
                        light=mean(lighting),
                        heat=mean(heating)
  )
+elecUsage$month = as.numeric(format.Date(elecUsage$date, "%m"))
 save(elecUsage, file='ElectricalUsage.Rda')
 
 load('ElectricalUsage.Rda')
 
+currencyUnit = '$'
+roundTo = 2
 shinyServer (
   function (input, output)
   {
     rate = reactive(as.numeric(input$rate))
-    output$light = renderText(rate()*mean(elecUsage$light))
-    output$heat = renderText(rate()*mean(elecUsage$heat))
+    dataByMonth  = reactive(subset(elecUsage, month == as.numeric(input$month)))
+    output$light = renderText(paste(
+      currencyUnit, 
+      round(rate()*mean(dataByMonth()$light), roundTo)
+    ))
+    output$heat = renderText(paste(
+      currencyUnit, 
+      round(rate()*mean(dataByMonth()$heat), roundTo)
+    ))
     output$plot = renderPlot({
       ggplot(elecUsage, aes(date, usage)) + 
         geom_point() + geom_smooth() +
-        scale_x_date() + xlab('') + ylab("Electrical Usage")
+        scale_x_date() + xlab('') + ylab("Electrical Usage per Day")
     })
   }
 )

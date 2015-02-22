@@ -1,0 +1,69 @@
+---
+title       : Energy Cost Analysis
+subtitle    : A simple way to estimate utility costs
+author      : Toby Patterson
+job         : Professional Coffee Maker
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [bootstrap, shiny, interactive]
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+<style>
+  body pre code {
+    font-size: .8em;
+  }
+  .title-slide {
+    background-color: #00bd1c;
+    background: -webkit-radial-gradient(30% 40%, #9dfe43, #00bd1c);
+  }
+  
+  body {
+    background-color: black;
+  }
+  body slides > slide {
+    background: -webkit-radial-gradient(20% 10%, #DFF3FA, #2E6CF4);
+    color: #aaa;
+  }
+  
+  img, code.php {
+    border: none;
+    box-shadow: 0px 0px 5px #333, inset 0px 0px 2px #333;
+    margin: 0 20px
+  }
+  body a {
+    color: #444;
+  }
+  #structure pre {
+    width: 70%;
+  }
+</style>
+
+--- #page1 .slidify
+
+## The Applicataion
+
+We can estimate electrical costs by examining historical usage data. Provided a month and expected utility costs,
+we can provide people estimates on what they can expect for utility costs for the coming year.
+
+--- #page2
+
+## Electrical Usage Over Time
+
+```{r message=FALSE}
+require(ggplot2)
+load('ElectricalUsage.Rda')
+ggplot(elecUsage, aes(date, usage)) + 
+      geom_point() + geom_smooth() +
+      scale_x_date() + xlab('') + ylab("Electrical Usage")
+```
+
+--- #page3
+
+## The Application
+
+<iframe src="https://tobypatterson.shinyapps.io/DataProduct/ " ></iframe>
+
+
